@@ -34,7 +34,7 @@ module.exports = yeoman.Base.extend({
   },
 
   install: function () {
-    //this.installDependencies();
-    //this.spawnCommand('gulp', ['default']);
+    this.installDependencies();
+    this.spawnCommand('gulp', ['default']);
   }
 });
