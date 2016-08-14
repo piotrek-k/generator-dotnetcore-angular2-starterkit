@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+
+<h2>Using services example:</h2>
+
+<table>
+    <tr>
+        <th>Time of adding</th>
+        <th>Content</th>
+        <th>Number of views</th>
+    </tr>
+    <tr *ngFor="let story of storiesService.get()">
+        <td>{{story.timeOfAdding}}</td>
+        <td>{{story.content}}</td>
+        <td>{{story.numberOfViews}}</td>
+    </tr>
+</table>
+
+<h2>Using two-way binding example:</h2>
+
+<select [(ngModel)]="selectedOption" value="-1">
+    <option value="-1">Choose a story...</option>
+    <option *ngFor="let story of storiesService.get()" [attr.value]="index">{{story.content}}</option>
+</select>
+
+{{selectedOption}}
