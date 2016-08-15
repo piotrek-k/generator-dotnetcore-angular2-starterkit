@@ -6,6 +6,8 @@ Welcome to ASP.net Core Angular 2 template!
 
 ## What do you need to know: ##
 
+[This README contains solutions for possible problems after scaffolding new project](https://github.com/MyPCIsBetter/generator-aspnet-angular2/blob/master/generators/app/templates/src/Angular2Template/README.md)
+
 ### Used technologies: ###
 
 * ASP.net Core (with WebAPI) - for backend management
