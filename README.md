@@ -1,27 +1,33 @@
-# generator-myangular-2-dotnetcore [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> 
+# ASP.net Core Angular 2 Yeoman generator
+
+> Starter kit for all who want to use ASP.net Core with Angular 2
+
+Welcome to ASP.net Core Angular 2 template!
+
+## What do you need to know: ##
+
+### Used technologies: ###
+
+* ASP.net Core (with WebAPI) - for backend management
+* Angular 2 (RC 4) - for frontend management
+* TypeScript - because it works much better with Angular than pure JS
+* Gulp - for all automation
+* Bootstrap - for better appearance
+
+### Other important information about template: ###
+
+* `wwwroot` folder is treated like temporary file. What that means is: what's inside is build by Gulp and can be deleted at any time without causing damage. Don't make any changes there!
+* All code that you make is safely stored in `src` folder.
+* Routing is party done by ASP.net and partly by Angular. If ASP.net doesn't recongnize path, it loads index.html file with angular inside.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-myangular-2-dotnetcore using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+> This generator is not yet available in NPM. I need to polish some things before publishing
 
-```bash
-npm install -g yo
-npm install -g generator-myangular-2-dotnetcore
-```
+## If you are already using this template
 
-Then generate your new project:
+[Check out project README.](https://github.com/MyPCIsBetter/generator-aspnet-angular2/blob/master/generators/app/templates/src/Angular2Template/README.md) **Read this if you have any doubts, questions or problems.** You can find it in every project you generate using this template.
 
-```bash
-yo myangular-2-dotnetcore
-```
-
-## Getting To Know Yeoman
-
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
 
 ## License
 
