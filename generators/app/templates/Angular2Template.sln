@@ -8,6 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{404EA5F3-9D8D-4D4B-95D5-1BFF896E5DD0}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		gulpfile.js = gulpfile.js
+		package.json = package.json
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Angular2Template", "src\Angular2Template\Angular2Template.xproj", "{807532A6-6047-4D57-ADAA-D89BE2A53343}"

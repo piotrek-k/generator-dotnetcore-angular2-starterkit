@@ -29,7 +29,7 @@ gulp.task('default', ["copy-npm-libraries", 'compile.watch'], function () {
 });
 
 gulp.task("copy-npm-libraries", () => {
-    gulp.src([
+    var a = gulp.src([
             'core-js/client/**',
             'systemjs/dist/system.src.js',
             'reflect-metadata/**',
@@ -42,6 +42,11 @@ gulp.task("copy-npm-libraries", () => {
         cwd: paths.nodeModules
     })
         .pipe(gulp.dest(paths.frontendLibs));
+
+    //in case bower didn't placed libs where he should:
+    var b = gulp.src("./bower_components/**").pipe(gulp.dest(paths.frontendLibs));
+
+    return merge(a, b);
 });
 
 gulp.task('compile-ts', function (done) {

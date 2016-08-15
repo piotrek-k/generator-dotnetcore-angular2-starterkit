@@ -28,3 +28,12 @@ I encountered this problem many times in Visual Studio 2015. Visual Studio somet
 1. Go to `gulpfile.js`
 2. Find `path.filesToWatch` variable
 3. Make sure it includes extension of file you want to compile
+
+### If commands like `npm`, `bower`, `gulp` doesn't work globally in your console: ###
+And you can't install dependencies:
+
+1. Add "NODE_PATH" variable to `Windows Enviroment Variables`
+2. As a value type path to `node_modules` folder of global instance of NPM
+3. You should be able now to use those commands in console.
+
+[More on StackOverflow](http://stackoverflow.com/a/24042936/1804027)
