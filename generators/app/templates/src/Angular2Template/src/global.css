@@ -10,3 +10,11 @@ body {
 table, th, td {
     border: 1px solid black;
 }
+
+.text-centered {
+    text-align: center;
+}
+
+a {
+    cursor: pointer;
+}

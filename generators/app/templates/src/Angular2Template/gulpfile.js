@@ -19,12 +19,14 @@ var paths = {
     compiledSrcFiles: "./wwwroot/**/*",
     tsConfig: './src/app/tsconfig.json',
     programmableSrc: "./src", //kod źródłowy, pliki TypeScript
-    filesToWatch: "./src/**/*.{html,css,js,map}"
+    filesToWatch: "./src/**/*.{html,css,js,map}",
+    mediaDest: "./wwwroot/media/",
+    mediaSource: "./Media/**/*"
 };
 
 var tsProject = ts.createProject("tsconfig.json");
 
-gulp.task('default', ["copy-npm-libraries", 'compile.watch'], function () {
+gulp.task('default', ["copy-npm-libraries", 'compile.watch', 'copy-media'], function () {
     // place code for your default task here
 });
 
@@ -36,8 +38,9 @@ gulp.task("copy-npm-libraries", () => {
             'rxjs/**',
             'zone.js/dist/**',
             '@angular/**',
-            'jquery/dist/jquery.*js',
-            'bootstrap/dist/js/bootstrap.*js',
+            'jquery/dist/jquery.min.js',
+            'bootstrap/dist/**/*',
+            'jasmine-core/lib/jasmine-core/**/*'
     ], {
         cwd: paths.nodeModules
     })
@@ -57,6 +60,10 @@ gulp.task('compile-ts', function (done) {
     return tsResult.js
                     .pipe(sourcemaps.write('.'))
                     .pipe(gulp.dest("./wwwroot"));
+});
+
+gulp.task('copy-media', function () {
+    return gulp.src(paths.mediaSource).pipe(gulp.dest(paths.mediaDest));
 });
 
 gulp.task('compile-templates', function () {

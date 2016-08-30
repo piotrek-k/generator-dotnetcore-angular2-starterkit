@@ -1,25 +1,67 @@
-<h1>{{title}}</h1>
+<div class="container body-content">
+    <h1>{{title}}</h1>
 
-<h2>Using services example:</h2>
+    <p>Using services example:</p>
 
-<table>
-    <tr>
-        <th>Time of adding</th>
-        <th>Content</th>
-        <th>Number of views</th>
-    </tr>
-    <tr *ngFor="let story of storiesService.get()">
-        <td>{{story.timeOfAdding}}</td>
-        <td>{{story.content}}</td>
-        <td>{{story.numberOfViews}}</td>
-    </tr>
-</table>
+    <hr class="featurette-divider" />
 
-<h2>Using two-way binding example:</h2>
+    <h2>Session data taken from ASP.net Web API: </h2>
+    <p>It will disappear if you refresh your server</p>
+    <table>
+        <tr>
+            <th>Content</th>
+            <th>Number of views</th>
+            <th>Time of adding</th>
+        </tr>
+        <tr *ngFor="let story of stories">
+            <td>{{story.content}}</td>
+            <td>{{story.numberOfViews}}</td>
+            <td>{{story.timeOfAdding}}</td>
+        </tr>
+    </table>
 
-<select [(ngModel)]="selectedOption" value="-1">
-    <option value="-1">Choose a story...</option>
-    <option *ngFor="let story of storiesService.get()" [attr.value]="index">{{story.content}}</option>
-</select>
+    <h4>New story:</h4>
+    <input #newStoryContent />
+    <button (click)="addStory(newStoryContent.value); newStoryContent.value=''">
+        Add story!
+    </button>
 
-{{selectedOption}}
+    <h2>Database data taken from ASP.net Web API: </h2>
+    <p>Safely stored in database. Won't disappear until you delete it</p>
+    <table>
+        <tr>
+            <th>Content</th>
+            <th>Number of views</th>
+            <th>Time of adding</th>
+        </tr>
+        <tr *ngFor="let story of storiesFromDb">
+            <td>{{story.content}}</td>
+            <td>{{story.numberOfViews}}</td>
+            <td>{{story.timeOfAdding}}</td>
+        </tr>
+    </table>
+
+    <h4>New story:</h4>
+    <input #newStoryContent2 />
+    <button (click)="addStoryToDB(newStoryContent2.value); newStoryContent2.value=''">
+        Add story that will be saved in DB!
+    </button>
+
+    <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+
+    <hr class="featurette-divider" />
+
+    <h3>Using two-way binding example:</h3>
+
+    <select [(ngModel)]="selectedOption" value="-1">
+        <option value="-1">Choose a story...</option>
+        <option *ngFor="let story of stories" [attr.value]="index">{{story.content}}</option>
+    </select>
+    <br />
+
+    <h4>You've chosen:</h4>
+    <p>{{selectedOption}}</p>
+
+    <hr class="featurette-divider" />
+
+</div>

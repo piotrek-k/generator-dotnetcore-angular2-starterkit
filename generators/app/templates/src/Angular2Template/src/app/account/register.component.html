@@ -1,0 +1,38 @@
+<style>
+    .error input {
+        border: 1px #a52a2a solid;
+    }
+</style>
+
+<div class="container body-content">
+    <h1>Create new account</h1>
+
+    <div *ngIf="errorMessage!=''"  class="alert alert-danger">
+        <p>{{errorMessage}}</p>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="RegisterUser(registerForm.value)">
+        <div>
+            <div class="form-group" [class.error]="!elements['email'].valid && elements['email'].touched">
+                <input type="email" class="form-control text-input" id="email"
+                       placeholder="Your email" [formControl]="registerForm.controls['email']" />
+            </div>
+            <div class="form-group" [class.error]="!elements['password'].valid && elements['password'].touched">
+                <input type="password" class="form-control text-input" id="password"
+                       placeholder="Password" [formControl]="registerForm.controls['password']" />
+            </div>
+            <div class="form-group" [class.error]="!elements['confirmPassword'].valid && elements['confirmPassword'].touched">
+                <input type="password" class="form-control text-input" id="confirmPassword"
+                       placeholder="Confirm password" [formControl]="registerForm.controls['confirmPassword']" />
+                <div *ngIf="registerForm.hasError('passwordsMismatch')">Passwords do not match!</div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <button type="submit" class="btn btn-success" [class.disabled]="loadingState">
+                    <span *ngIf="!loadingState">Send</span>
+                    <span *ngIf="loadingState">Registering...</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
