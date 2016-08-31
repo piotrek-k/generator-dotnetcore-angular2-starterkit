@@ -43,7 +43,7 @@
       "mocha": true
     }
   },
-  "repository": "MyPCIsBetter/generator-myangular-2-dotnetcore",
+  "repository": "piotrek-k/generator-dotnetcore-angular2-starterkit",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
