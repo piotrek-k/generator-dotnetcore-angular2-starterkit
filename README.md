@@ -24,6 +24,10 @@ Welcome to ASP.net Core Angular 2 template!
 
 > npm install -g generator-dotnetcore-angular2-starterkit
 
+You'll also need [Yeoman](http://yeoman.io/)
+
+> npm install -g yo
+
 ## Generating new project
 
 > yo dotnetcore-angular2-starterkit
