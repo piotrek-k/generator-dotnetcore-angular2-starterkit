@@ -2,11 +2,8 @@
   "name": "generator-dotnetcore-angular2-starterkit",
   "version": "1.0.0",
   "description": "Starterkit for asp.net core angular 2 projects",
-  "homepage": "",
-  "author": {
-    "name": "Piotrek K",
-    "url": "https://github.com/piotrek-k"
-  },
+  "homepage": "https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit#readme",
+  "author": "Piotrek K (https://github.com/piotrek-k)",
   "files": [
     "generators"
   ],
@@ -18,23 +15,23 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.23.0",
-    "chalk": "^1.0.0",
-    "yosay": "^1.0.0"
+    "yeoman-generator": "0.23.0",
+    "chalk": "1.0.0",
+    "yosay": "1.0.0"
   },
   "devDependencies": {
-    "yeoman-test": "^1.0.0",
-    "yeoman-assert": "^2.0.0",
-    "eslint": "^3.1.1",
-    "eslint-config-xo-space": "^0.14.0",
-    "gulp": "^3.9.0",
-    "gulp-eslint": "^2.0.0",
-    "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-line-ending-corrector": "^1.0.1",
-    "gulp-istanbul": "^1.0.0",
-    "gulp-mocha": "^2.0.0",
-    "gulp-plumber": "^1.0.0",
-    "gulp-nsp": "^2.1.0",
+    "yeoman-test": "1.0.0",
+    "yeoman-assert": "2.0.0",
+    "eslint": "3.1.1",
+    "eslint-config-xo-space": "0.14.0",
+    "gulp": "3.9.0",
+    "gulp-eslint": "2.0.0",
+    "gulp-exclude-gitignore": "1.0.0",
+    "gulp-line-ending-corrector": "1.0.1",
+    "gulp-istanbul": "1.0.0",
+    "gulp-mocha": "2.0.0",
+    "gulp-plumber": "1.0.0",
+    "gulp-nsp": "2.1.0",
     "path": "0.12.7"
   },
   "eslintConfig": {
@@ -43,10 +40,19 @@
       "mocha": true
     }
   },
-  "repository": "MyPCIsBetter/generator-myangular-2-dotnetcore",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit.git"
+  },
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit/issues"
+  },
+  "directories": {
+    "test": "test"
+  }
 }
