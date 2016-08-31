@@ -1,11 +1,11 @@
 {
-  "name": "generator-aspnet-angular2",
-  "version": "0.0.0",
-  "description": "",
+  "name": "generator-dotnetcore-angular2-starterkit",
+  "version": "1.0.0",
+  "description": "Starterkit for asp.net core angular 2 projects",
   "homepage": "",
   "author": {
     "name": "Piotrek K",
-    "url": "https://github.com/MyPCIsBetter"
+    "url": "https://github.com/piotrek-k"
   },
   "files": [
     "generators"
