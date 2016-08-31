@@ -4,6 +4,8 @@
 
 Welcome to ASP.net Core Angular 2 template!
 
+![](Zrzut ekranu 2016-08-30 22.27.36.png)
+
 ## Technical details about this template: ##
 
 [Everything can be found here](https://github.com/piotrek-k/generator-aspnet-angular2/blob/master/generators/app/templates/src/Angular2Template/README.md)
