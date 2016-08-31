@@ -10,14 +10,41 @@ function camelize(str) {
     }).replace(/\s+/g, '');
 }
 
+function afterInstallingDependencies(context) {
+    context.log("***");
+    context.log("***");
+    context.log("NPM installed");
+    context.log("***");
+    context.log("***");
+    context.log("Restoring dotnet packages:");
+    context.spawnCommand("dotnet", ["restore"]).on('close', function () {
+        context.log("***");
+        context.log("***");
+        context.log("DOTNET restore finished");
+        context.log("***");
+        context.log("***");
+        context.log("Creating database: ");
+        context.spawnCommand("dotnet", ["ef", "database", "update"]).on('close', function () {
+            context.log("***");
+            context.log("***");
+            context.log("If everything went OK and 'default' task finishes, your project is ready and you can run it by typing `dotnet run`");
+            context.log("***");
+            context.log("***");
+            context.log("Gulp tasks:");
+            context.spawnCommand('gulp', ['default']);
+        });
+    });
+}
+
 module.exports = yeoman.Base.extend({
     prompting: function () {
         // Have Yeoman greet the user.
         this.log(yosay(
             "Let's create some nice ASP.net Core Angular 2 project :)"
-            ));
+        ));
 
-        this.log("If you ever had any problems: read README.md file on GitHub or in your new project folder.");
+        this.log("This generator won't run correctly if you don't have npm, dotnet core or gulp installed!");
+        this.log("If you ever had any problems: read README.md file. It's on GitHub or in project that I'll generate now.");
 
         var prompts = [
             {
@@ -29,8 +56,16 @@ module.exports = yeoman.Base.extend({
             {
                 type: 'confirm',
                 name: 'runBuild',
-                message: 'Would you like to build project (npm, bower, gulp) right after scaffolding it?',
-                default: true
+                message: 'Would you like to build project (npm, dotnet, gulp) right after scaffolding it?',
+                default: true,
+                store: true
+            },
+            {
+                type: 'confirm',
+                name: 'useCache',
+                message: 'Do you want to use npm-cache to speed up installing dependecies? (make sure you have npm-cache installed!)',
+                default: false,
+                store: true
             }];
 
         return this.prompt(prompts).then(function (props) {
@@ -56,32 +91,17 @@ module.exports = yeoman.Base.extend({
             var elementDir = path.join(process.cwd(), startingDirectory);
             process.chdir(elementDir);
             var context = this;
-            this.installDependencies(
-                {
-                    callback: function () {
-                        context.log("***");
-                        context.log("***");
-                        context.log("NPM and Bower installed");
-                        context.log("***");
-                        context.log("***");
-                        context.log("Restoring dotnet packages:");
-                        context.spawnCommand("dotnet", ["restore"]);
-                        context.log("***");
-                        context.log("***");
-                        context.log("Gulp tasks:");
-                        context.spawnCommand('gulp', ['default']);
-                    }
-                });
-            // this.log("*************************************");
-            // this.log("*******Starting installation*********");
-            // this.log("**********DOTNET PACKAGES************");
-            // this.spawnCommand("dotnet", ["restore"], {cwd: startingDirectory});
-            // this.log("**************NPM********************");
-            // this.spawnCommand("npm", ["install"], {cwd: startingDirectory});
-            // this.log("**************Bower******************");
-            // this.spawnCommand("bower", ["install"], {cwd: startingDirectory});
-            // this.log("**************Gulp*******************");
-            // this.spawnCommand('gulp', ['default'], {cwd: startingDirectory});
+
+            if (this.props.useCache) {
+                context.spawnCommand("npm-cache", ["install"])
+                    .on('close', function () { afterInstallingDependencies(context); });
+            }
+            else {
+                this.installDependencies(
+                    {
+                        callback: function () { afterInstallingDependencies(context); }
+                    });
+            }
         }
     }
 });
