@@ -40,10 +40,14 @@
       "mocha": true
     }
   },
+<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "git+https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit.git"
   },
+=======
+  "repository": "piotrek-k/generator-dotnetcore-angular2-starterkit",
+>>>>>>> e2969cd2729e48707ade49c955245ecb05e23fa5
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
