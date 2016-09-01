@@ -3,6 +3,7 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require('path');
+var replaceName = require('gulp-replace-name');
 
 function camelize(str) {
     return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter, index) {
@@ -77,11 +78,14 @@ module.exports = yeoman.Base.extend({
     },
 
     writing: function () {
+        this.registerTransformStream(replaceName(/(666replacethat666|666Angular2Template666)/g, this.props.appName));
+        console.log("copying..." + this.templatePath() + " ... " + this.destinationPath() + " ... " + this.props.appName);
         this.fs.copyTpl(
             this.templatePath(),
             this.destinationPath(), {
                 appName: this.props.appName
             });
+        console.log("done!...");
     },
 
     install: function () {
