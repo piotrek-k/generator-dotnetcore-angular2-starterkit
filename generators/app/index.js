@@ -5,12 +5,7 @@ var yosay = require('yosay');
 var path = require('path');
 var replaceName = require('gulp-replace-name');
 var rename = require("gulp-rename");
-
-function camelize(str) {
-    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter, index) {
-        return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
-    }).replace(/\s+/g, '');
-}
+var fnc = require("../../functions.js");
 
 function afterInstallingDependencies(context) {
     context.log("***");
@@ -72,7 +67,7 @@ module.exports = yeoman.Base.extend({
 
         return this.prompt(prompts).then(function (props) {
             // To access props later use this.props.someAnswer;
-            props.appName = camelize(props.appName);
+            props.appName = fnc.capitalizeFirstLetter(fnc.camelize(props.appName));
             this.props = props;
             this.log(props.appName);
         }.bind(this));
@@ -85,20 +80,17 @@ module.exports = yeoman.Base.extend({
             path.basename = path.basename.replace(/(666replacethat666|666Angular2Template666)/g, THAT.props.appName);
             path.dirname = path.dirname.replace(/(666replacethat666|666Angular2Template666)/g, THAT.props.appName);
         }));
-        console.log("copying..." + this.templatePath() + " ... " + this.destinationPath() + " ... " + this.props.appName);
         this.fs.copyTpl(
-            //path.join(this.templatePath(),"/*/**"),
             this.templatePath(),
             this.destinationPath(), {
                 appName: this.props.appName
             });
-        console.log("done!...");
     },
 
     install: function () {
         if (this.props.runBuild) {
             //this.installDependencies();
-            var startingDirectory = "src/Angular2Template";
+            var startingDirectory = "src/"+this.props.appName;
             var elementDir = path.join(process.cwd(), startingDirectory);
             process.chdir(elementDir);
             var context = this;
