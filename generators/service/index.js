@@ -9,9 +9,9 @@ function camelize(str) {
     }).replace(/\s+/g, '');
 }
 
-var STORAGE = [
+var STORAGE = {
     dest: "serviceDestination"
-];
+};
 
 module.exports = yeoman.Base.extend({
     prompting: function () {

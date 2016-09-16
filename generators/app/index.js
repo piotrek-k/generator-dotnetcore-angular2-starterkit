@@ -4,7 +4,7 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require('path');
 var rename = require("gulp-rename");
-var fnc = require("../../functions.js");
+var fnc = require("../functions.js");
 
 function afterInstallingDependencies(context) {
     context.log("***");
