@@ -3,7 +3,6 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require('path');
-var replaceName = require('gulp-replace-name');
 var rename = require("gulp-rename");
 var fnc = require("../../functions.js");
 
@@ -74,7 +73,6 @@ module.exports = yeoman.Base.extend({
     },
 
     writing: function () {
-        //this.registerTransformStream(replaceName(/(666replacethat666|666Angular2Template666)/g, this.props.appName));
         var THAT = this;
         this.registerTransformStream(rename(function(path){
             path.basename = path.basename.replace(/(666replacethat666|666Angular2Template666)/g, THAT.props.appName);
