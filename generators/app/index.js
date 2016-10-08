@@ -78,7 +78,7 @@ module.exports = yeoman.Base.extend({
             path.basename = path.basename.replace(/(666replacethat666|666Angular2Template666)/g, THAT.props.appName);
             path.dirname = path.dirname.replace(/(666replacethat666|666Angular2Template666)/g, THAT.props.appName);
         }));
-        console.log("appName", this.props.appName, "TemplatePath", this.templatePath());
+        //console.log("appName", this.props.appName, "TemplatePath", this.templatePath());
         this.fs.copyTpl(
             this.templatePath(),
             this.destinationPath(), {
