@@ -45,6 +45,14 @@ You'll also need [Yeoman](http://yeoman.io/)
 [Check out project README.](https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit/blob/master/generators/app/templates/src/666Angular2Template666/README.md) **Read this if you have any doubts, questions or problems.** You can find it in every project you generate using this template.
 
 
+## Doesn't work?
+
+You can [debug this generator](http://yeoman.io/authoring/debugging.html) by typing
+
+> set DEBUG=yeoman:generator yo dotnetcore-angular2-starterkit
+
+in your console. Copy error message and let me know about it by creating new issue on GitHub.
+
 ## License
 
 Apache-2.0 © [Piotrek]()
