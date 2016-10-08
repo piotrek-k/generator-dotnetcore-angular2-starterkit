@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "<%= appName %>",
+  "name": "<%=newAppName%>",
   "private": true,
   "scripts": {
     "postinstall": "typings install",

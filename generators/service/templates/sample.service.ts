@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { <%=name%> } from './<%= nameLowerCase %>';
+import { <%=name%> } from './<%=nameLowerCase%>';
 
 @Injectable()
 export class <%=name%>Service {
-    <%=name%>Container: <%=name %>[] = [
+    <%=name%>Container: <%=name%>[] = [
         {
             exampleVariable: "hello!"
         }];

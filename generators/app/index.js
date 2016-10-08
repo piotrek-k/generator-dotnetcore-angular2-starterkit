@@ -74,21 +74,23 @@ module.exports = yeoman.Base.extend({
 
     writing: function () {
         var THAT = this;
-        this.registerTransformStream(rename(function(path){
+        this.registerTransformStream(rename(function (path) {
             path.basename = path.basename.replace(/(666replacethat666|666Angular2Template666)/g, THAT.props.appName);
             path.dirname = path.dirname.replace(/(666replacethat666|666Angular2Template666)/g, THAT.props.appName);
         }));
+        console.log("appName", this.props.appName, "TemplatePath", this.templatePath());
         this.fs.copyTpl(
             this.templatePath(),
             this.destinationPath(), {
-                appName: this.props.appName
+                appName: this.props.appName,
+                "newAppName": this.props.appName,
             });
     },
 
     install: function () {
         if (this.props.runBuild) {
             //this.installDependencies();
-            var startingDirectory = "src/"+this.props.appName;
+            var startingDirectory = "src/" + this.props.appName;
             var elementDir = path.join(process.cwd(), startingDirectory);
             process.chdir(elementDir);
             var context = this;

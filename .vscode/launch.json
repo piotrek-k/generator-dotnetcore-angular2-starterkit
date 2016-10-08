@@ -1,0 +1,40 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        // {
+        //     "name": "Launch yo",
+        //     "type": "node",
+        //     "program": "C:\\Program Files\\nodejs\\node_modules\\yo\\lib\\cli.js",
+        //     "args": [
+        //         "dotnetcore-angular2-starterkit"
+        //     ],
+        //     "stopOnEntry": false,
+        //     "cwd": "${workspaceRoot}",
+        //     "preLaunchTask": null,
+        //     "runtimeExecutable": null,
+        //     "runtimeArgs": [
+        //         "--nolazy"
+        //     ],
+        //     "env": {
+        //         "NODE_ENV": "development"
+        //     },
+        //     "externalConsole": true,
+        //     "sourceMaps": false,
+        //     "outDir": "${workspaceRoot}\\TEST_GENERATOR"
+        // }
+        {
+            "name": "Launch yo",
+            "type": "node",
+            //  NOTE: this should be the result of running `which yo` on your system...
+            //        for the typical NPM install & config, this is usually /usr/local/bin/yo
+            //        however others (as below) may have global NPM packages setup in a 
+            //        different path as common to avoid using sudo on OS X 
+            "program": "C:\\Program Files\\nodejs\\node_modules\\yo\\lib\\cli.js",
+            "args": [
+                "nodehttps",
+                "--skip-install"
+            ],
+            "stopOnEntry": false
+        }
+    ]
+}
