@@ -1,0 +1,34 @@
+{
+    "version": "0.1.0",
+    "isShellCommand": true,
+    "command": "cmd",
+    "args": [
+        "/C"
+    ],
+    "tasks": [
+        {
+            "taskName": "Build Backend (dotnet)",
+            "suppressTaskName": true,
+            "args": [
+                "dotnet build"
+            ],
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+            //"showOutput": "silent",
+        },
+        {
+            "taskName": "Build Frontend (gulp)",
+            "args": [
+                "gulp default"
+            ],
+            "suppressTaskName": true,
+            "isBuildCommand": false,
+            "isWatching": true,
+            "problemMatcher": [
+                "$lessCompile",
+                "$tsc",
+                "$jshint"
+            ]
+        }
+    ]
+}
