@@ -1,0 +1,22 @@
+<h1>Example Database data </h1>
+
+<p>This component demonstrates downloading data from database.</p>
+
+<p *ngIf="!stories"><em>Loading...</em></p>
+
+<table class='table' *ngIf="stories">
+    <thead>
+        <tr>
+            <th>Content</th>
+            <th>Time of adding</th>
+            <th>Views</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let story of stories">
+            <td>{{ story.content }}</td>
+            <td>{{ story.timeOfAdding }}</td>
+            <td>{{ story.numberOfViews }}</td>
+        </tr>
+    </tbody>
+</table>

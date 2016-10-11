@@ -1,0 +1,57 @@
+<div class='main-nav'>
+	<div class='navbar navbar-inverse'>
+		<div class='navbar-header'>
+			<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+			<a class='navbar-brand' [routerLink]="['/home']"><%=newAppName%></a>
+		</div>
+		<div class='clearfix'></div>
+		<div class='navbar-collapse collapse'>
+			<ul class='nav navbar-nav'>
+				<li [routerLinkActive]="['link-active']">
+					<a [routerLink]="['/home']">
+						<span class='glyphicon glyphicon-home'></span> Home
+					</a>
+				</li>
+				<li [routerLinkActive]="['link-active']">
+					<a [routerLink]="['/counter']">
+						<span class='glyphicon glyphicon-education'></span> Counter
+					</a>
+				</li>
+				<li [routerLinkActive]="['link-active']">
+					<a [routerLink]="['/fetch-data']">
+						<span class='glyphicon glyphicon-th-list'></span> Fetch data
+					</a>
+				</li>
+				<li [routerLinkActive]="['link-active']">
+					<a [routerLink]="['/database']">
+						<span class='glyphicon glyphicon-th-list'></span> Database data
+					</a>
+				</li>
+
+				<li [routerLinkActive]="['link-active']" *ngIf="!accountService.isLoggedIn">
+					<a [routerLink]="['/register']">
+						<span class="glyphicon glyphicon-user"></span> Sign Up
+					</a>
+				</li>
+				<li [routerLinkActive]="['link-active']" *ngIf="!accountService.isLoggedIn">
+					<a [routerLink]="['/login']">
+						<span class="glyphicon glyphicon-log-in"></span> Login
+					</a>
+				</li>
+				<li [routerLinkActive]="['link-active']" *ngIf="accountService.isLoggedIn">
+					<a><span class="glyphicon glyphicon-user"></span> {{accountService.getUserName()}}</a>
+				</li>
+				<li [routerLinkActive]="['link-active']" *ngIf="accountService.isLoggedIn">
+					<a (click)="accountService.logOut()">
+						<span class="glyphicon glyphicon-log-out"></span> Log Out
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

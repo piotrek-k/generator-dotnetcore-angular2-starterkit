@@ -62,6 +62,21 @@ module.exports = yeoman.Base.extend({
                 message: 'Do you want to use npm-cache to speed up installing dependecies? (make sure you have npm-cache installed!)',
                 default: false,
                 store: true
+            },
+            {
+                type: 'list',
+                name: 'templateToCopy',
+                message: "Which template do you want to use? (they offers nearly the same functionality, but uses different tools. See README for details)",
+                choices: [
+                    {
+                        name: "Template1: original, based on Angular.io tutorial ",
+                        value: 'template1'
+                    },
+                    {
+                        name: "Template2 (recommended): from aspnet-spa generator but enhanced (with db and login functionality)",
+                        value: 'template2'
+                    }
+                ]
             }];
 
         return this.prompt(prompts).then(function (props) {
@@ -69,18 +84,27 @@ module.exports = yeoman.Base.extend({
             props.appName = fnc.capitalizeFirstLetter(fnc.camelize(props.appName));
             this.props = props;
             this.log(props.appName);
+            this.log(props.templateToCopy);
         }.bind(this));
     },
 
     writing: function () {
+        var path = "";
+        if (this.props.templateToCopy === "template1") {
+            path = this.templatePath() + "/template1/";
+        }
+        if (this.props.templateToCopy === "template2") {
+            path = this.templatePath() + "/template2/";
+        }
+
         var THAT = this;
         this.registerTransformStream(rename(function (path) {
-            path.basename = path.basename.replace(/(666replacethat666|666Angular2Template666)/g, THAT.props.appName);
-            path.dirname = path.dirname.replace(/(666replacethat666|666Angular2Template666)/g, THAT.props.appName);
+            path.basename = path.basename.replace(/(666replacethat666|666Angular2Template666|Angular2TemplateTwo666)/g, THAT.props.appName);
+            path.dirname = path.dirname.replace(/(666replacethat666|666Angular2Template666|Angular2TemplateTwo666)/g, THAT.props.appName);
         }));
         //console.log("appName", this.props.appName, "TemplatePath", this.templatePath());
         this.fs.copyTpl(
-            this.templatePath(),
+            path,
             this.destinationPath(), {
                 appName: this.props.appName,
                 "newAppName": this.props.appName,
@@ -88,11 +112,12 @@ module.exports = yeoman.Base.extend({
     },
 
     install: function () {
+        console.log("runBuild: " + this.props.runBuild);
         if (this.props.runBuild) {
             //this.installDependencies();
-            var startingDirectory = "src/" + this.props.appName;
-            var elementDir = path.join(process.cwd(), startingDirectory);
-            process.chdir(elementDir);
+            // var startingDirectory = this.props.appName; //"src/" + 
+            // var elementDir = path.join(process.cwd(), startingDirectory);
+            // process.chdir(elementDir);
             var context = this;
 
             if (this.props.useCache) {

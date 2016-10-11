@@ -1,0 +1,23 @@
+<div class="container body-content">
+    <h1>Log in</h1>
+    <form (ngSubmit)="sendLoginCredentials()">
+        <div>
+            <div class="form-group">
+                <input type="email" class="form-control text-input" name="email" [(ngModel)]="formModel.email"
+                       placeholder="Your email" />
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control text-input" name="password" [(ngModel)]="formModel.password"
+                       placeholder="Password" />
+            </div>
+        </div>
+        <div>
+            <div>
+                <button type="submit" class="btn btn-success" [class.disabled]="loadingState">
+                    <span *ngIf="!loadingState">Send</span>
+                    <span *ngIf="loadingState">Logging in...</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
