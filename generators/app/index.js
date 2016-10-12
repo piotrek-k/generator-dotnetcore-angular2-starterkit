@@ -111,10 +111,11 @@ module.exports = yeoman.Base.extend({
             });
 
         //folders that names begin with dot are being ommited. They have to be copied individually
-        this.fs.copy(
+        this.fs.copyTpl(
             path+".vscode/*.json",
             this.destinationPath()+"/.vscode", {
-                globOptions: { dot: true }
+                appName: this.props.appName,
+                "newAppName": this.props.appName,
             });
     },
 
