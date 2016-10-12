@@ -69,12 +69,12 @@ module.exports = yeoman.Base.extend({
                 message: "Which template do you want to use? (they offers nearly the same functionality, but uses different tools. See README for details)",
                 choices: [
                     {
-                        name: "Template1: original, based on Angular.io tutorial ",
-                        value: 'template1'
-                    },
-                    {
                         name: "Template2 (recommended): from aspnet-spa generator but enhanced (with db and login functionality)",
                         value: 'template2'
+                    },
+                    {
+                        name: "Template1: original, based on Angular.io tutorial ",
+                        value: 'template1'
                     }
                 ]
             }];
@@ -108,6 +108,13 @@ module.exports = yeoman.Base.extend({
             this.destinationPath(), {
                 appName: this.props.appName,
                 "newAppName": this.props.appName,
+            });
+
+        //folders that names begin with dot are being ommited. They have to be copied individually
+        this.fs.copy(
+            path+".vscode/*.json",
+            this.destinationPath()+"/.vscode", {
+                globOptions: { dot: true }
             });
     },
 
