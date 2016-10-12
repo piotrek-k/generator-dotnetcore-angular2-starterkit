@@ -1,6 +1,6 @@
 {
   "name": "generator-dotnetcore-angular2-starterkit",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Starterkit for asp.net core angular 2 projects",
   "homepage": "https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit#readme",
   "author": "Piotrek K (https://github.com/piotrek-k)",
