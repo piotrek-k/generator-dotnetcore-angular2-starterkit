@@ -6,7 +6,7 @@ var path = require('path');
 var rename = require("gulp-rename");
 var fnc = require("../functions.js");
 
-function afterInstallingDependencies(context) {
+function afterInstallingDependencies(context, props) {
     context.log("***");
     context.log("***");
     context.log("NPM installed");
@@ -27,7 +27,9 @@ function afterInstallingDependencies(context) {
             context.log("***");
             context.log("***");
             context.log("Gulp tasks:");
-            context.spawnCommand('gulp', ['default']);
+            context.spawnCommand('gulp', ['default']).on('close', function(){
+                context.spawnCommand('webpack', ['--config', 'webpack.config.vendor.js']);
+            });
         });
     });
 }
@@ -135,7 +137,7 @@ module.exports = yeoman.Base.extend({
             else {
                 this.installDependencies(
                     {
-                        callback: function () { afterInstallingDependencies(context); }
+                        callback: function () { afterInstallingDependencies(context, this.props); }
                     });
             }
         }
