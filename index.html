@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Generator-dotnetcore-angular2-starterkit by piotrek-k</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Generator-dotnetcore-angular2-starterkit</h1>
+      <h2 class="project-tagline">Yeoman generator for ASP.net Core Angular 2 TypeScript applications</h2>
+      <a href="https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit" class="btn">View on GitHub</a>
+      <a href="https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="aspnet-core-angular-2-yeoman-generator" class="anchor" href="#aspnet-core-angular-2-yeoman-generator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ASP.net Core Angular 2 Yeoman generator</h1>
+
+<blockquote>
+<p>Starter kit for all who want to use ASP.net Core with Angular 2</p>
+</blockquote>
+
+<p>Welcome to ASP.net Core Angular 2 template!</p>
+
+<p><img src="screenshot.png" alt=""></p>
+
+<h2>
+<a id="technical-details-about-this-generator" class="anchor" href="#technical-details-about-this-generator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Technical details about this generator:</h2>
+
+<p>Right now there are two templates to choose.</p>
+
+<ul>
+<li>Template1 is the one I've made from scratch. It's based on <a href="https://angular.io/">tutorial from angular.io</a>. <a href="https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit/blob/master/generators/app/templates/src/666Angular2Template666/README.md">Details can be found here</a>
+</li>
+<li>Template2 is based on other yeoman generator available <a href="https://github.com/aspnet/JavaScriptServices">here</a>, but enhanced. I've added database and login functionality (so it functions like template1)</li>
+</ul>
+
+<p>Personally, I recommend template2, because angular part is made there by experts ;)</p>
+
+<h3>
+<a id="used-technologies" class="anchor" href="#used-technologies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Used technologies:</h3>
+
+<ul>
+<li>ASP.net Core (with WebAPI) - for backend management</li>
+<li>Angular 2 (RC 4) - for frontend management</li>
+<li>TypeScript - because it works much better with Angular than pure JS</li>
+<li>Gulp(template1)/Webpack(template2) - for all automation</li>
+<li>Bootstrap - for better appearance</li>
+<li>Entity Framework - for database management</li>
+<li>OpenIddict - authentication process</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<blockquote>
+<p>npm install -g generator-dotnetcore-angular2-starterkit</p>
+</blockquote>
+
+<p>You'll also need <a href="http://yeoman.io/">Yeoman</a></p>
+
+<blockquote>
+<p>npm install -g yo</p>
+</blockquote>
+
+<h2>
+<a id="what-do-you-need-to-make-project-work" class="anchor" href="#what-do-you-need-to-make-project-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What do you need to make project work</h2>
+
+<ol>
+<li>
+<a href="https://www.microsoft.com/net/core#windows">ASP.net Core</a> because it's .net core project</li>
+<li>
+<a href="https://nodejs.org/en/">Node.JS</a> because it's used in building process</li>
+<li>
+<a href="https://www.npmjs.com/">NPM</a> to install yeoman and this generator</li>
+<li>
+<a href="https://github.com/gulpjs/gulp">Gulp</a> (just install it globally)</li>
+<li>Node scripts like <code>npm</code>, <code>gulp</code>, <code>bower</code> need to work globally in console. <a href="https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit/blob/master/generators/app/templates/src/666Angular2Template666/README.md#if-commands-like-npm-bower-gulp-doesnt-work-globally-in-your-console">This is how you can do it.</a>
+</li>
+</ol>
+
+<h2>
+<a id="generating-new-project" class="anchor" href="#generating-new-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Generating new project</h2>
+
+<blockquote>
+<p>yo dotnetcore-angular2-starterkit</p>
+</blockquote>
+
+<h2>
+<a id="after-installation" class="anchor" href="#after-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>After installation:</h2>
+
+<p>For template 1: <a href="https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit/blob/master/generators/app/templates/src/666Angular2Template666/README.md">Check out project README.</a> <strong>Read this if you have any doubts, questions or problems.</strong> You can find it in every project you generate using this template.</p>
+
+<p>For template 2: check out <a href="https://github.com/aspnet/JavaScriptServices">this GitHub page</a></p>
+
+<h2>
+<a id="doesnt-work" class="anchor" href="#doesnt-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Doesn't work?</h2>
+
+<p>You can <a href="http://yeoman.io/authoring/debugging.html">debug this generator</a> by typing</p>
+
+<blockquote>
+<p>set DEBUG=yeoman:generator yo dotnetcore-angular2-starterkit</p>
+</blockquote>
+
+<p>in your console. Copy error message and let me know about it by creating new issue on GitHub.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Apache-2.0 © <a href="">Piotrek</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/piotrek-k/generator-dotnetcore-angular2-starterkit">Generator-dotnetcore-angular2-starterkit</a> is maintained by <a href="https://github.com/piotrek-k">piotrek-k</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
