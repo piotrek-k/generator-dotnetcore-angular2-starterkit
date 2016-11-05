@@ -137,7 +137,7 @@ module.exports = yeoman.Base.extend({
             else {
                 this.installDependencies(
                     {
-                        callback: function () { afterInstallingDependencies(context, this.props); }
+                        callback: function () { afterInstallingDependencies(context, context.props); }
                     });
             }
         }
