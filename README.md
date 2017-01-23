@@ -1,4 +1,8 @@
-# ASP.net Core Angular 2 Yeoman generator
+IMPORTANT
+
+> Please note that this generator is a little outdated and shouldn't be used in production for now. I'm currently working on update. While I'm doing this, keep in mind that it can not work well enough for app developement. You shouldn't use this generator as-is as angular app base, but it can still be a source of examples of how you can implement authentication in your apps. I'm sorry for inconvenience :/
+
+# ~~ASP.net Core Angular 2 Yeoman generator~~
 
 > Starter kit for all who want to use ASP.net Core with Angular 2
 
